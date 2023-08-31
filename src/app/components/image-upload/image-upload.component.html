@@ -1,0 +1,16 @@
+<input type="file" (change)="onImageSelected($event)">
+
+<button (click)="uploadImage()" [disabled]="uploading">Upload Image</button>
+
+<!-- <div>
+
+  <div class="drag-drop-area"[class.uploading]="uploading" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+    <p>Drag and drop an image here</p>
+    <input type="file" multiple="true" (change)="onImageSelected($event)" accept="image/*">
+  </div>
+  <button (click)="uploadImage()" [disabled]="uploading">Upload Image</button>
+</div>
+
+<div >
+  <img *ngFor="let image of imagesUrl" [src]="image" alt="Uploaded Image">
+</div> -->
