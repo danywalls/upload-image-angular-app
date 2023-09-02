@@ -1,12 +1,55 @@
 :host {
+}
+
+.upload-area {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
+
 .drag-drop-area {
   border: 2px dashed #ccc;
-  padding: 20px;
+  padding: 90px;
   text-align: center;
   cursor: pointer;
+}
+
+.upload-area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 10rem;
+  width: 22rem;
+
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.uploading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.uploading::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .drag-drop-area p {
@@ -15,4 +58,18 @@
 
 .drag-drop-area:hover {
   background-color: #f2f2f2;
+}
+
+.images {
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.images > img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
 }
