@@ -1,23 +1,14 @@
-<div class="drag-drop-area" [class.uploading]="uploading" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
 
-  <p>Drag and drop to automatic upload</p>
-
-</div>
-<input type="file"
-
-multiple="true"
-(change)="onImageSelected($event)">
-
-<button (click)="upload()">Upload Image</button>
+<kendo-upload
+  #kendoupload
+  saveUrl="'saveAPI'"
+  removeUrl="'removeAPI'"
+  (complete)="onFinish(kendoupload)"
+  (success)="onSave()"
+/>
 
 <div class="images">
-
   @for (image of imagesUrl; track image) {
-
-  <img  [src]="image" alt="Uploaded Image">
-
+    <img [src]="image" alt="Uploaded Image" />
   }
-
-
-
 </div>
